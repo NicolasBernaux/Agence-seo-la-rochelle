@@ -9,7 +9,7 @@
     "url": "https://github.com/tr1s/tris-webpack-boilerplate"
   },
   "engines": {
-    "node": "^12"
+    "node": "^16"
   },
   "license": "ISC",
   "author": "tr1s",
