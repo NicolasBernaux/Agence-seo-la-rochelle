@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO Start -->
+    <title><%= metaTitle %></title>
+    <meta name="description" content="<%= metaDescription %>"/>
+    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:standard"/>
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<%= metaTitle %>" />
+    <meta property="og:description" content="<%= metaDescription %>" />
+    <meta property="og:site_name" content="<%= metaTitle %>" />
+    <meta property="og:updated_time" content="2022-10-05T23:51:34+00:00" />
+    <meta property="og:image" content="https://deux-rien.fr/app/uploads/2021/03/ogimage.png" />
+    <meta property="og:image:secure_url" content="https://deux-rien.fr/app/uploads/2021/03/ogimage.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Agence de communication" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="<%= metaTitle %>" />
+    <meta name="twitter:description" content="<%= metaDescription %>" />
+    <meta name="twitter:image" content="https://deux-rien.fr/app/uploads/2021/03/ogimage.png" />
+
+    <!-- Google Font Start -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins%3Awght%40400%3B700&ver=6.0.2&display=swap" />
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins%3Awght%40400%3B700&ver=6.0.2&display=swap" media="print"/>
+    <!-- Google Font End -->
+    
+    <!-- Favicon Start -->
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= require('./images/favicon/apple-touch-icon.png') %>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= require('./images/favicon/favicon-32x32.png') %>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= require('./images/favicon/favicon-16x16.png') %>">
+    <link rel="manifest" href="<%= require('./images/favicon/site.webmanifest') %>">
+    <link rel="mask-icon" href="<%= require('./images/favicon/safari-pinned-tab.svg') %>" color="#ffd42d">
+    <!-- Favicon End -->
+  </head>
+
+  <body>
+    <header class="container header">
+      <img class="header__image" src="<%= require('./images/logo.svg') %>" title="Logo <%= title %>, Charente-Maritime"/>
+      <h1 class="header__title"><%= title %></h1>
+    </header>
+    <div class="content container">
+      <div class="hero">
+        <img class="hero__logo" src="<%= require('./images/logo.svg') %>" title="<%= title %>, Charente-Maritime"/>
+        <p class="hero__subtitle">Web <span>•</span> Design <span>•</span> SEO|SEA <span>•</span> Communication <span>•</span> Marketing</p>
+        <a href="https://deux-rien.fr" class="button"><%= title %></a>
+        <div class="hero__scroll">
+          <img src="<%= require('./images/scroll-round.svg') %>" title="scroll"/>
+        </div>
+      </div>
+      <div class="text">
+        <div class="text__expertises">
+          <h2 class="text__title">Expertises</h2>
+          <ul class="text__list">
+            <% keywords.split(',').forEach(function(e) { %>
+              <li><%= e %></li>
+            <% }); %>
+          </ul>
+        </div>
+        <div class="text__content">
+          <h2 class="text__title"><%= title %></h2>
+          <div class="text__description">
+            <%= description %>
+          </div>
+          <a href="https://deux-rien.fr/agence-web-la-rochelle/" class="button">Découvrir plus</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="signature">
+      <div class="container">
+        <p class="signature__title"><%= title %></p>
+        <p class="signature__content">Réalisé par <a href="https://deux-rien.fr">l’agence Web Deux Rien.</a></p>
+      </div>
+    </div>
+
+    <footer class="container">
+      <ul class="footer">
+        <% for (const title in sites) { %>
+          <li><a href="<%= sites[title] %>"><%= title %></a></li>
+        <% } %>
+      </ul>
+    </footer>
+  </body>
+</html>
